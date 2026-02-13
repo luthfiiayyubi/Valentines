@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+/* PAGE */
+.page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+/* BG */
+#page1,
+#page2 {
+  background: linear-gradient(45deg, #ff4b6e, #ff8fa3);
+  color: white;
+}
+
+/* BUTTON */
+button {
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 10px;
+  background: white;
+  color: #ff4b6e;
+  font-size: clamp(14px, 2.5vw, 18px);
+  padding: 10px 22px;
+}
+
+#noBtn {
+  background: black;
+  color: white;
+}
+
+.back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+}
+
+/* BG PAGE 3 */
+.bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #ff4b6e, #ff8fa3);
+  z-index: 0;
+}
+
+/* HEART RAIN */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  opacity: 0.6;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* PHOTO WALL */
+.photo-wall {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 2;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.column img {
+  width: clamp(70px, 12vw, 170px);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0.45;
+  filter: brightness(0.85) blur(1px);
+  transition: 0.4s;
+}
+
+.column img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  filter: brightness(1) blur(0);
+  box-shadow: 0 0 25px #ff9ac2;
+}
+
+/* TRUE INFINITE LOOP */
+.up {
+  animation: scrollUp 60s linear infinite;
+}
+.down {
+  animation: scrollDown 60s linear infinite;
+}
+
+@keyframes scrollUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes scrollDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* TEXT */
+.love-text {
+  width: clamp(260px, 55%, 520px);
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(255, 75, 110, 0.9);
+  color: white;
+  z-index: 3;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 40px rgba(255, 0, 100, 0.35);
+}
+
+/* 🎬 CINEMATIC */
+.fade-in {
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+  }
+}
